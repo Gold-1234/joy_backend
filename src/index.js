@@ -26,6 +26,10 @@ const authenticateAgent = (req, res, next) => {
 
 // --- ENDPOINTS ---
 
+app.get('/health', (req, res) => {
+  res.json('Health OK')
+})
+
 app.post('/get-token', async (req, res) => {
   const { deviceId, roomName } = req.body;
   if (!deviceId || !roomName) {
