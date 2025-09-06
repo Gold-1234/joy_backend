@@ -77,6 +77,7 @@ app.post('/get-token', async (req, res) => {
     
     });
     const token = await at.toJwt();
+    console.log(`token : ${token}`);
     
     res.json({ token });
 
