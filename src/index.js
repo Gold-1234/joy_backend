@@ -9,7 +9,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({ origin: "https://example.com", 
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    credentials: true},));
 app.use(express.json());
 
 // Middleware to protect agent-only routes
