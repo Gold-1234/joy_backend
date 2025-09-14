@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: "https://example.com", 
+app.use(cors({ origin: process.env.FRONTEND_URL, 
     methods: ["GET", "POST", "PUT", "DELETE"], 
     credentials: true},));
 app.use(express.json());
